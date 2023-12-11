@@ -87,3 +87,13 @@ ul .done {
     text-decoration: line-through;
     transition: 1s;
 }
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    color: rgb(113, 136, 242);
+}
