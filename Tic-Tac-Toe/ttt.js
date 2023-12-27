@@ -54,6 +54,11 @@ Array.from(boxes).forEach(Element => {
             if (over === false){
                 document.getElementsByClassName("info")[0].innerText ="Turn for " + turn;
             }
+            else {
+                for(i=0; i<9; i++){
+                    boxes[i].classList.add("disabled");
+                }
+            }
         }
     })
 })
