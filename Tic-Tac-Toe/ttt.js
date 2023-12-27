@@ -39,6 +39,42 @@ const checkWin = function (){
     })
 }
 
+//Function for a draw
+let touchCount = 0;
+let boxes = document.getElementsByClassName("box");
+const drawgame = () => {
+    document.querySelector(".info").innerText = "It's a draw";
+    for(i=0; i<9; i++){
+        boxes[i].classList.add("disabled");
+    }
+
+}
+
+//Game Logic
+Array.from(boxes).forEach(Element => {
+    let boxText = Element.querySelector(".box-text");
+    Element.addEventListener("click", function(){
+        touchCount++;
+        if (boxText.innerText === ""){
+            boxText.innerText = turn;
+            turn = changeTurn();
+            ting.play();
+            checkWin();
+            if (over === false){
+                document.getElementsByClassName("info")[0].innerText ="Turn for " + turn;
+
+                if(touchCount === 9){
+                    drawgame();
+                }
+            }
+            else {
+                for(i=0; i<9; i++){
+                    boxes[i].classList.add("disabled");
+                }
+            }
+        }
+    })
+})
 
 //Game Logic
 
