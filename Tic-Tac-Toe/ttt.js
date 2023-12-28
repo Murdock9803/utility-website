@@ -1,3 +1,4 @@
+// Audio class variables
 let ting = new Audio("ting.mp3")
 let gameover = new Audio("gameover.mp3")
 
