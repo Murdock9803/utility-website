@@ -1,4 +1,3 @@
-// Audio class variables
 let ting = new Audio("ting.mp3")
 let gameover = new Audio("gameover.mp3")
 
@@ -67,29 +66,6 @@ Array.from(boxes).forEach(Element => {
                 if(touchCount === 9){
                     drawgame();
                 }
-            }
-            else {
-                for(i=0; i<9; i++){
-                    boxes[i].classList.add("disabled");
-                }
-            }
-        }
-    })
-})
-
-//Game Logic
-
-let boxes = document.getElementsByClassName("box");
-Array.from(boxes).forEach(Element => {
-    let boxText = Element.querySelector(".box-text");
-    Element.addEventListener("click", function(){
-        if (boxText.innerText === ""){
-            boxText.innerText = turn;
-            turn = changeTurn();
-            ting.play();
-            checkWin();
-            if (over === false){
-                document.getElementsByClassName("info")[0].innerText ="Turn for " + turn;
             }
             else {
                 for(i=0; i<9; i++){
